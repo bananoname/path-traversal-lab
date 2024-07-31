@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: skf_app
+    volumes:
+      - .:/home/app/LFI
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"  # Example port mapping, adjust as needed
+    command: python3 ./LFI.py
